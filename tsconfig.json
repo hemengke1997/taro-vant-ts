@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2017",  // 编译目标语言的版本
+    "module": "commonjs", // 生成代码的模块标准
+    "removeComments": true, // 删除注释
+    "preserveConstEnums": true, // 保留const枚举
+    "moduleResolution": "node", // 指定model解析方式(node.js)
+    "experimentalDecorators": true, // 启用对装饰器的实验支持(decorator是一种语言特性，还没有被完全纳入到JavaScript规范中)
+    "noImplicitAny": false, // 在没有类型注释的某些情况下，当TypeScript不能推断出变量的类型时，它会为变量返回到any类型
+    "allowSyntheticDefaultImports": true, // import React from 'react' => import * as React from 'react'
+    "outDir": "lib", // ts编译后输出目录。 如dist、 lib
+    "noUnusedLocals": true, // 未使用的本地变量会报错
+    "noUnusedParameters": true, // 未使用的参数会报错
+    "strictNullChecks": true, // 严格检查null和undefined
+    "sourceMap": true, // 调试时显示源代码
+    "baseUrl": ".",  // 解析非相对模块的基地址
+    "paths": {
+      "@/*":["src/*"],
+      "@vant/weapp/*": ["path/to/node_modules/@vant/weapp/dist/*"]
+    },
+    "rootDir": ".", // 指定打包输出目录
+    "jsx": "react",
+    "jsxFactory": "React.createElement",
+    "allowJs": true, // 可以在ts中import js
+    "resolveJsonModule": true, // 可以在ts中import json
+    "typeRoots": [ // 申明文件
+      "node_modules/@types",
+      "global.d.ts"
+    ]
+  },
+  "exclude": [ // 跳过这些文件
+    "node_modules",
+    "dist"
+  ],
+  "compileOnSave": false // 保存时编译
+}
